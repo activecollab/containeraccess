@@ -1,7 +1,7 @@
 {
   "name" : "activecollab/containeraccess",
   "type": "library",
-  "description": "Interface that implement objects that have access DIC access",
+  "description": "Interface that implement objects that have DIC access",
   "license" : "MIT",
   "prefer-stable": true,
   "keywords": [ "dic", "activecollab" ],
