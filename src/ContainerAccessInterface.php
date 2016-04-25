@@ -11,7 +11,7 @@ namespace ActiveCollab\ContainerAccess;
 use Interop\Container\ContainerInterface;
 
 /**
- * @package ActiveCollab\DatabaseObject
+ * @package ActiveCollab\ContainerAccess
  */
 interface ContainerAccessInterface
 {
@@ -31,5 +31,5 @@ interface ContainerAccessInterface
      * @param  ContainerInterface $container
      * @return $this
      */
-    public function &setContainer(ContainerInterface &$container);
+    public function setContainer(ContainerInterface $container);
 }

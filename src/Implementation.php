@@ -6,13 +6,13 @@
  * (c) A51 doo <info@activecollab.com>. All rights reserved.
  */
 
-namespace ActiveCollab\ContainerAccess\ContainerAccessInterface;
+namespace ActiveCollab\ContainerAccess;
 
 use Interop\Container\ContainerInterface;
 use LogicException;
 
 /**
- * @package ActiveCollab\DatabaseObjectContainerAccessInterface
+ * @package ActiveCollab\ContainerAccess
  */
 trait Implementation
 {
@@ -32,7 +32,7 @@ trait Implementation
     /**
      * {@inheritdoc}
      */
-    public function &getContainer()
+    public function getContainer()
     {
         return $this->container;
     }
@@ -40,7 +40,7 @@ trait Implementation
     /**
      * {@inheritdoc}
      */
-    public function &setContainer(ContainerInterface &$container)
+    public function setContainer(ContainerInterface $container)
     {
         $this->container = $container;
 
@@ -57,9 +57,9 @@ trait Implementation
     {
         if ($this->container) {
             return $this->container->get($name);
-        } else {
-            throw new LogicException('Container is not set');
         }
+
+        throw new LogicException('Container is not set');
     }
 
     /**
