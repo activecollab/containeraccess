@@ -1,5 +1,11 @@
 <?php
 
+/*
+ * This file is part of the Active Collab ContainerAccess project.
+ *
+ * (c) A51 doo <info@activecollab.com>. All rights reserved.
+ */
+
 namespace ActiveCollab\ContainerAccess;
 
 use Interop\Container\ContainerInterface;
@@ -10,12 +16,12 @@ use Interop\Container\ContainerInterface;
 interface ContainerAccessInterface
 {
     /**
-     * @return boolean
+     * @return bool
      */
     public function hasContainer();
 
     /**
-     * Return container instance
+     * Return container instance.
      *
      * @return ContainerInterface
      */

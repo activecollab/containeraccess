@@ -1,8 +1,13 @@
 <?php
 
+/*
+ * This file is part of the Active Collab ContainerAccess project.
+ *
+ * (c) A51 doo <info@activecollab.com>. All rights reserved.
+ */
+
 namespace ActiveCollab\ContainerAccess\ContainerAccessInterface;
 
-use ActiveCollab\ContainerAccess\ContainerAccessInterface;
 use Interop\Container\ContainerInterface;
 use LogicException;
 
@@ -43,7 +48,7 @@ trait Implementation
     }
 
     /**
-     * Bridge container get
+     * Bridge container get.
      *
      * @param  string $name
      * @return mixed
@@ -58,7 +63,7 @@ trait Implementation
     }
 
     /**
-     * Bridge container has
+     * Bridge container has.
      *
      * @param  string $name
      * @return bool
