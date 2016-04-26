@@ -1,21 +1,27 @@
 <?php
 
+/*
+ * This file is part of the Active Collab ContainerAccess project.
+ *
+ * (c) A51 doo <info@activecollab.com>. All rights reserved.
+ */
+
 namespace ActiveCollab\ContainerAccess;
 
 use Interop\Container\ContainerInterface;
 
 /**
- * @package ActiveCollab\DatabaseObject
+ * @package ActiveCollab\ContainerAccess
  */
 interface ContainerAccessInterface
 {
     /**
-     * @return boolean
+     * @return bool
      */
     public function hasContainer();
 
     /**
-     * Return container instance
+     * Return container instance.
      *
      * @return ContainerInterface
      */
@@ -25,5 +31,5 @@ interface ContainerAccessInterface
      * @param  ContainerInterface $container
      * @return $this
      */
-    public function &setContainer(ContainerInterface &$container);
+    public function setContainer(ContainerInterface $container);
 }
