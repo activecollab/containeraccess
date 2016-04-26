@@ -6,13 +6,13 @@
  * (c) A51 doo <info@activecollab.com>. All rights reserved.
  */
 
-namespace ActiveCollab\ContainerAccess;
+namespace ActiveCollab\ContainerAccess\ContainerAccess;
 
 use Interop\Container\ContainerInterface;
 use LogicException;
 
 /**
- * @package ActiveCollab\ContainerAccess
+ * @package ActiveCollab\ContainerAccess\ContainerAccess
  */
 trait Implementation
 {
