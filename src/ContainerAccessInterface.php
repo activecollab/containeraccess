@@ -25,11 +25,11 @@ interface ContainerAccessInterface
      *
      * @return ContainerInterface
      */
-    public function getContainer();
+    public function &getContainer();
 
     /**
      * @param  ContainerInterface $container
      * @return $this
      */
-    public function setContainer(ContainerInterface $container);
+    public function &setContainer(ContainerInterface &$container);
 }

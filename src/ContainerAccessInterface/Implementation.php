@@ -32,7 +32,7 @@ trait Implementation
     /**
      * {@inheritdoc}
      */
-    public function getContainer()
+    public function &getContainer()
     {
         return $this->container;
     }
@@ -40,7 +40,7 @@ trait Implementation
     /**
      * {@inheritdoc}
      */
-    public function setContainer(ContainerInterface $container)
+    public function &setContainer(ContainerInterface &$container)
     {
         $this->container = $container;
 
