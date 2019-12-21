@@ -16,6 +16,9 @@ use LogicException;
 
 trait Implementation
 {
+    /**
+     * @var ContainerInterface
+     */
     private $container;
 
     public function hasContainer(): bool
@@ -23,7 +26,7 @@ trait Implementation
         return $this->container instanceof ContainerInterface;
     }
 
-    public function &getContainer(): ContainerInterface
+    public function &getContainer(): ?ContainerInterface
     {
         return $this->container;
     }

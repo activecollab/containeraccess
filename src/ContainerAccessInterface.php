@@ -15,6 +15,6 @@ use Psr\Container\ContainerInterface;
 interface ContainerAccessInterface
 {
     public function hasContainer(): bool;
-    public function &getContainer(): ContainerInterface;
+    public function &getContainer(): ?ContainerInterface;
     public function &setContainer(ContainerInterface &$container): ContainerAccessInterface;
 }
