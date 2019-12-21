@@ -6,30 +6,15 @@
  * (c) A51 doo <info@activecollab.com>. All rights reserved.
  */
 
+declare(strict_types=1);
+
 namespace ActiveCollab\ContainerAccess;
 
-use Interop\Container\ContainerInterface;
+use Psr\Container\ContainerInterface;
 
-/**
- * @package ActiveCollab\ContainerAccess
- */
 interface ContainerAccessInterface
 {
-    /**
-     * @return bool
-     */
-    public function hasContainer();
-
-    /**
-     * Return container instance.
-     *
-     * @return ContainerInterface
-     */
-    public function &getContainer();
-
-    /**
-     * @param  ContainerInterface $container
-     * @return $this
-     */
-    public function &setContainer(ContainerInterface &$container);
+    public function hasContainer(): bool;
+    public function &getContainer(): ?ContainerInterface;
+    public function &setContainer(ContainerInterface &$container): ContainerAccessInterface;
 }

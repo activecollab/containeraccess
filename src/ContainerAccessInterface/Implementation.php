@@ -6,14 +6,14 @@
  * (c) A51 doo <info@activecollab.com>. All rights reserved.
  */
 
+declare(strict_types=1);
+
 namespace ActiveCollab\ContainerAccess\ContainerAccessInterface;
 
-use Interop\Container\ContainerInterface;
+use ActiveCollab\ContainerAccess\ContainerAccessInterface;
+use Psr\Container\ContainerInterface;
 use LogicException;
 
-/**
- * @package ActiveCollab\ContainerAccess\ContainerAccessInterface
- */
 trait Implementation
 {
     /**
@@ -21,38 +21,23 @@ trait Implementation
      */
     private $container;
 
-    /**
-     * {@inheritdoc}
-     */
-    public function hasContainer()
+    public function hasContainer(): bool
     {
         return $this->container instanceof ContainerInterface;
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function &getContainer()
+    public function &getContainer(): ?ContainerInterface
     {
         return $this->container;
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function &setContainer(ContainerInterface &$container)
+    public function &setContainer(ContainerInterface &$container): ContainerAccessInterface
     {
         $this->container = $container;
 
         return $this;
     }
 
-    /**
-     * Bridge container get.
-     *
-     * @param  string $name
-     * @return mixed
-     */
     public function __get($name)
     {
         if ($this->container) {
@@ -62,12 +47,6 @@ trait Implementation
         throw new LogicException('Container is not set');
     }
 
-    /**
-     * Bridge container has.
-     *
-     * @param  string $name
-     * @return bool
-     */
     public function __isset($name)
     {
         return $this->container ? $this->container->has($name) : false;
