@@ -28,6 +28,21 @@ class ContainerAccessTest extends TestCase
         $this->assertNull($object->getContainer());
     }
 
+    /**
+     * @expectedException \LogicException
+     * @expectedExceptionMessage Container is not set
+     */
+    public function testWillThrowExceptionOnMissingContainer()
+    {
+        $object = new class implements ContainerAccessInterface
+        {
+            use ContainerAccessInterface\Implementation;
+        };
+
+        $this->assertFalse($object->hasContainer());
+        $object->this_is_a_key;
+    }
+
     public function testWillProbeForDependency()
     {
         /** @var ContainerInterface|MockObject $container_mock */
